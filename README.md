@@ -13,16 +13,33 @@ play-limit rules, pre-save, and join a persistent community that survives the re
 
 ## The one-take build prompt
 
-When starting the build session, use this prompt:
+The repo already exists at `https://github.com/ekowandy627-art/Listening-Party` with
+this spec pack pushed to `main`. Point the build session at that repo (clone it, or
+open it if already local) and give it this prompt:
 
-> Build the Listening Party MVP exactly as specified in `listening-party/docs/`.
-> Follow `docs/09-build-plan.md` milestone by milestone (M0–M12). Do not re-litigate
-> stack or schema decisions — they are final in `docs/00-decisions.md` and
-> `docs/02-data-model.md`. After each milestone, run the checks listed for it.
-> After the local acceptance pass (M11), deploy to production per
-> `docs/11-deployment.md` — ask me for Vercel/Neon/Cloudflare/Resend logins at M12,
-> not earlier. Done means the full `docs/10-acceptance-checklist.md` is green,
-> including the §Deployment section on the live URL.
+> Build the Listening Party MVP exactly as specified in this repo's `docs/` folder —
+> read `README.md` first for the doc index. Follow `docs/09-build-plan.md` milestone
+> by milestone, starting at M0. Do not re-litigate stack, schema, or UI decisions —
+> they are final in `docs/00-decisions.md`, `docs/02-data-model.md`, and
+> `docs/12-theming.md`. Scaffold the Next.js app into `app/` inside this existing repo
+> (do not `git init` fresh) and commit after every milestone. After each milestone, run
+> the checks listed for it before moving on.
+>
+> M0–M11 need no external accounts — everything runs locally against Docker
+> (Postgres + MinIO); magic links print to the console. Build and verify all of these
+> against `docs/10-acceptance-checklist.md` (everything except the final §Deployment
+> section). **Stop after M11 and report status** rather than proceeding to M12 — I
+> don't have Vercel/Neon/Cloudflare/Resend accounts set up yet, so deployment
+> (`docs/11-deployment.md`) is a separate step we'll do once those exist.
+
+Use this **shorter follow-up prompt** later, once the four accounts exist, to finish
+the job:
+
+> Continue the Listening Party build at M12 per `docs/11-deployment.md` — deploy to
+> production (Vercel + Neon + R2 + Resend, no custom domain, no Google/Apple OAuth),
+> run the production seed for artist "Challe from Ghana" (handle `challefromghana`),
+> and verify the §Deployment section of `docs/10-acceptance-checklist.md` on the live
+> URL.
 
 ## Document index
 
@@ -35,7 +52,7 @@ When starting the build session, use this prompt:
 | [docs/03-api-spec.md](docs/03-api-spec.md) | Every API route: method, path, auth, request/response shapes |
 | [docs/04-routes-and-screens.md](docs/04-routes-and-screens.md) | Every page: URL, layout, components, states, empty states |
 | [docs/12-theming.md](docs/12-theming.md) | **Visual system (source of truth for UI):** logo, palette, type, 6 room mood-presets, component styling from the approved mockups |
-| [docs/05-blocks-spec.md](docs/05-blocks-spec.md) | The 14 block types: config schemas, editor UI, fan-side rendering |
+| [docs/05-blocks-spec.md](docs/05-blocks-spec.md) | The 15 block types ("acts"): config schemas, editor UI, fan-side rendering |
 | [docs/06-auth-spec.md](docs/06-auth-spec.md) | Magic link + Google/Apple flows, session model, role gating |
 | [docs/07-secure-audio-spec.md](docs/07-secure-audio-spec.md) | Upload pipeline, proxied streaming, play-limit enforcement |
 | [docs/08-notifications-analytics.md](docs/08-notifications-analytics.md) | Email notification triggers + analytics event taxonomy |

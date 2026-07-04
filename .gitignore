@@ -1,0 +1,18 @@
+.DS_Store
+**/.DS_Store
+
+# Future app/ (scaffolded at M0) — node/next artifacts
+app/node_modules/
+app/.next/
+app/.env
+app/.env.local
+app/.env*.local
+app/.env.production.local
+app/*.tsbuildinfo
+app/dist/
+app/coverage/
+
+# OS/editor
+*.log
+.vscode/
+.idea/

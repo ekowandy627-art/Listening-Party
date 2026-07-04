@@ -1,13 +1,19 @@
 # 09 — Build Plan (execute in this exact order)
 
 Each milestone ends with a **check** — run it before moving on. Commit after every
-milestone (`git init` at M0) so a failed step never destroys prior work. Target:
-all 13 milestones in one session, ending with a **live production deployment** (M12).
+milestone so a failed step never destroys prior work. Target: all 13 milestones in one
+session, ending with a **live production deployment** (M12).
+
+**Repo already exists:** `https://github.com/ekowandy627-art/Listening-Party` was
+created and pushed with this spec pack on 2026-07-04 (docs/11 M12 step 1). Do not
+`git init` fresh — clone/use that existing repo as the working directory, scaffold
+the Next.js app into it (e.g. at `app/` alongside `docs/`), and commit on top of the
+existing history.
 
 ## M0 — Scaffold & infrastructure
 
-- `git init` in `listening-party/app/`; create Next.js 15 app (TS, Tailwind, App Router,
-  `src/` dir, no ESLint prompts blocking — accept defaults non-interactively).
+- In the existing repo, create the Next.js 15 app under `app/` (TS, Tailwind, App
+  Router, `src/` dir, no ESLint prompts blocking — accept defaults non-interactively).
 - Add shadcn/ui (init + add: button, input, textarea, card, dialog, sheet, tabs,
   dropdown-menu, avatar, badge, select, sonner, skeleton, table, switch).
 - Add deps: `prisma @prisma/client next-auth@beta @auth/prisma-adapter zod resend

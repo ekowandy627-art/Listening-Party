@@ -40,8 +40,13 @@ just clicking "sign up" on each site. Come back to M12 once all five exist.
 
 ## M12 step-by-step
 
-1. **Repo**: push `app/` to a new GitHub repo (private), `main` branch.
-   (`gh repo create listening-party --private --source . --push`)
+1. **Repo**: ✅ done 2026-07-04 — the spec pack is pushed to
+   `https://github.com/ekowandy627-art/Listening-Party` (`main` branch). **Note: this
+   repo is currently PUBLIC**, not private as originally planned — fine for docs, but
+   flag before pushing app code (env secrets live in Vercel/`.env`, never committed,
+   so this isn't a leak risk, just a visibility choice worth confirming). At M0, scaffold
+   the Next.js app straight into this existing repo (don't `git init` again) — just
+   `cd` into it, run the Next.js scaffolder in place, and commit from there.
 2. **Neon**: create project `listening-party` → copy the **pooled** connection string
    (with `-pooler`, `sslmode=require`) for the app; also copy the **direct** (unpooled)
    string for migrations (`DIRECT_URL`). Add to Prisma datasource:
